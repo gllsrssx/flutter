@@ -1,39 +1,87 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DayDetail extends StatelessWidget {
-  final int dayIndex;
+  final DateTime date;
 
-  const DayDetail(this.dayIndex, {super.key}); // Use super.key and const
+  const DayDetail({super.key, required this.date});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Day $dayIndex Details')),
-      body: StreamBuilder<DocumentSnapshot>(
-        stream: FirebaseFirestore.instance
-            .collection('meals')
-            .doc('day_$dayIndex')
-            .snapshots(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-                child: CircularProgressIndicator()); // Add const
-          } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
-          } else if (!snapshot.hasData || !snapshot.data!.exists) {
-            return Center(child: Text('No data for Day $dayIndex'));
-          } else {
-            var data = snapshot.data!.data() as Map<String, dynamic>;
-            return ListView(
+      appBar: AppBar(
+        title: Text('${date.weekday}, ${date.day} ${date.month} ${date.year}'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Row(
               children: [
-                ListTile(title: Text('Breakfast: ${data['breakfast']}')),
-                ListTile(title: Text('Lunch: ${data['lunch']}')),
-                ListTile(title: Text('Dinner: ${data['dinner']}')),
+                const Icon(Icons.breakfast_dining),
+                const SizedBox(width: 8),
+                const Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(labelText: 'Breakfast'),
+                  ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.arrow_drop_down),
+                  onPressed: () {
+                    // Implement meal selection from past entries
+                  },
+                ),
               ],
-            );
-          }
-        },
+            ),
+            Row(
+              children: [
+                const Icon(Icons.lunch_dining),
+                const SizedBox(width: 8),
+                const Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(labelText: 'Lunch'),
+                  ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.arrow_drop_down),
+                  onPressed: () {
+                    // Implement meal selection from past entries
+                  },
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                const Icon(Icons.dinner_dining),
+                const SizedBox(width: 8),
+                const Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(labelText: 'Dinner'),
+                  ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.arrow_drop_down),
+                  onPressed: () {
+                    // Implement meal selection from past entries
+                  },
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Save changes
+                Navigator.pop(context);
+              },
+              child: const Text('Save and Back'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Back without saving'),
+            ),
+          ],
+        ),
       ),
     );
   }
