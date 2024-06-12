@@ -1,3 +1,39 @@
 {
-  "cSpell.words": ["cupertino", "Cupertino", "Dbmr", "Schyler"]
+  "cSpell.words": [
+    "appspot",
+    "buildlog",
+    "Dbmr",
+    "firebaseapp",
+    "Intelli",
+    "Qhgo",
+    "smth",
+    "Symbolication"
+  ],
+  "cSpell.language": "en,nl,nl-NL,lorem,en-US,en-GB",
+  "cSpell.enableFiletypes": [
+    "Log",
+    "code-referencing",
+    "code-runner-output",
+    "code-text-binary",
+    "csv",
+    "dart",
+    "django-html",
+    "excel",
+    "gradle",
+    "gradle-build",
+    "gradle-kotlin-dsl",
+    "ignore",
+    "java-properties",
+    "jsx-tags",
+    "log",
+    "makefile",
+    "msbuild",
+    "pip-requirements",
+    "powershell",
+    "shellscript",
+    "snippets",
+    "sql",
+    "xaml",
+    "xml"
+  ]
 }
