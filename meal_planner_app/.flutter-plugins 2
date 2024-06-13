@@ -1,0 +1,13 @@
+# This is a generated file; do not edit or check into version control.
+cloud_firestore=/Users/gilles/.pub-cache/hosted/pub.dev/cloud_firestore-5.0.1/
+cloud_firestore_web=/Users/gilles/.pub-cache/hosted/pub.dev/cloud_firestore_web-4.0.1/
+firebase_auth=/Users/gilles/.pub-cache/hosted/pub.dev/firebase_auth-5.1.0/
+firebase_auth_web=/Users/gilles/.pub-cache/hosted/pub.dev/firebase_auth_web-5.12.2/
+firebase_core=/Users/gilles/.pub-cache/hosted/pub.dev/firebase_core-3.1.0/
+firebase_core_web=/Users/gilles/.pub-cache/hosted/pub.dev/firebase_core_web-2.17.2/
+google_sign_in=/Users/gilles/.pub-cache/hosted/pub.dev/google_sign_in-6.2.1/
+google_sign_in_android=/Users/gilles/.pub-cache/hosted/pub.dev/google_sign_in_android-6.1.24/
+google_sign_in_ios=/Users/gilles/.pub-cache/hosted/pub.dev/google_sign_in_ios-5.7.6/
+google_sign_in_web=/Users/gilles/.pub-cache/hosted/pub.dev/google_sign_in_web-0.12.4/
+sign_in_with_apple=/Users/gilles/.pub-cache/hosted/pub.dev/sign_in_with_apple-6.1.0/
+sign_in_with_apple_web=/Users/gilles/.pub-cache/hosted/pub.dev/sign_in_with_apple_web-2.1.0/
