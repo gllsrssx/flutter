@@ -3,6 +3,7 @@
     "appspot",
     "buildlog",
     "Dbmr",
+    "dotenv",
     "firebaseapp",
     "Intelli",
     "Qhgo",
