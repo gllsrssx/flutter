@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,11 +14,15 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(
+                'Welcome ${FirebaseAuth.instance.currentUser?.displayName ?? ''}!',
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/profile');
+                Navigator.pushNamed(context, '/account');
               },
-              child: const Text('Profile'),
+              child: const Text('Account'),
             ),
             ElevatedButton(
               onPressed: () {

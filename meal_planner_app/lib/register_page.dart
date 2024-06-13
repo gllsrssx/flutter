@@ -19,10 +19,10 @@ class RegisterPageState extends State<RegisterPage> {
         email: _emailController.text,
         password: _passwordController.text,
       );
-      if (!mounted) return;
-      Navigator.pushReplacementNamed(context, '/home');
+      if (mounted) {
+        Navigator.pushReplacementNamed(context, '/home');
+      }
     } catch (e) {
-      if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Failed to register.')),
       );
