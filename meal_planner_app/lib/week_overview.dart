@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'day_detail.dart';
 
 class WeekOverview extends StatelessWidget {
   final DateTime startDate;
@@ -9,41 +7,27 @@ class WeekOverview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> days = [
+      'Maandag',
+      'Dinsdag',
+      'Woensdag',
+      'Donderdag',
+      'Vrijdag',
+      'Zaterdag',
+      'Zondag'
+    ];
+
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Week Overview'),
-      ),
+      appBar: AppBar(title: const Text('Week Overzicht')),
       body: ListView.builder(
-        itemCount: 7,
+        itemCount: days.length,
         itemBuilder: (context, index) {
-          final day = startDate.add(Duration(days: index));
-          final dayName = DateFormat('EEEE').format(day); // Get the day name
           return ListTile(
-            title: Text(dayName),
-            subtitle: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Breakfast: ${getMeal(day, 'breakfast')}'),
-                Text('Lunch: ${getMeal(day, 'lunch')}'),
-                Text('Dinner: ${getMeal(day, 'dinner')}'),
-              ],
-            ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DayDetail(date: day),
-                ),
-              );
-            },
+            title: Text(days[index]),
+            // Add your icons or other UI elements here
           );
         },
       ),
     );
-  }
-
-  String getMeal(DateTime day, String mealType) {
-    // Mock data for demonstration
-    return 'Example meal';
   }
 }
